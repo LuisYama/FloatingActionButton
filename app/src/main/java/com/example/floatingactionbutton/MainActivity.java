@@ -13,9 +13,12 @@ import android.view.MenuItem;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
-public class MainActivity extends AppCompatActivity {
+import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     boolean click=false;
+    private FABToolbarLayout morph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +104,24 @@ public class MainActivity extends AppCompatActivity {
         });
         */
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        morph = (FABToolbarLayout) findViewById(R.id.fabtoolbar);
+
+        View uno, dos, tres, cuatro;
+
+        uno = findViewById(R.id.uno);
+        dos = findViewById(R.id.dos);
+        cuatro = findViewById(R.id.cuatro);
+        tres = findViewById(R.id.tres);
+
+        fab.setOnClickListener(this);
+        uno.setOnClickListener(this);
+        dos.setOnClickListener(this);
+        tres.setOnClickListener(this);
+        cuatro.setOnClickListener(this);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -124,4 +144,14 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.fab) {
+            morph.show();
+        }
+
+        morph.hide();
+    }
+    }
+
