@@ -13,22 +13,24 @@ import android.view.MenuItem;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     boolean click=false;
     private FABToolbarLayout morph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+      /*
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        /*
+
         //FAB sencillo con rompimiento de bordes
         FloatingActionButton fab = findViewById(R.id.fab);
 
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setAction("Action", null).show();
             }
         });
-           */
+
 
         /*
         //FAB con animación de escala
@@ -103,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         */
-
+/*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         morph = (FABToolbarLayout) findViewById(R.id.fabtoolbar);
 
@@ -118,11 +120,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         uno.setOnClickListener(this);
         dos.setOnClickListener(this);
         tres.setOnClickListener(this);
-        cuatro.setOnClickListener(this);
+        cuatro.setOnClickListener(this);*/
+
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.floatingactionmenu);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionsMenu fab = findViewById(R.id.fab);
+
     }
 
 
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -144,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         return super.onOptionsItemSelected(item);
     }
-
+/*
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.fab) {
@@ -152,6 +163,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         morph.hide();
-    }
+    }*/
     }
 
